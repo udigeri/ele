@@ -1,0 +1,7 @@
+development:
+  log_level: debug
+  log_file: ./ele.log 
+
+production:
+  log_level: debug
+  log_file: ./ele.log 
