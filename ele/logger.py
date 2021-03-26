@@ -1,4 +1,5 @@
 import logging
+import logging.handlers
 import os
 
 class EleLogger(logging.Logger):
@@ -12,6 +13,14 @@ class EleLogger(logging.Logger):
         self.formatter = logging.Formatter(self.LOG_FORMATTER)
         self.setLevel(config.log_level.upper())
         self.propagate = False
+        handler = logging.StreamHandler()
+        handler.setFormatter(self.formatter)
+        self.addHandler(handler) 
+
         handler = logging.FileHandler(config.log_file)
         handler.setFormatter(self.formatter)
         self.addHandler(handler) 
+
+        # handler = logging.handlers.HTTPHandler("localhost:8080","", method="POST")
+        # handler.setFormatter(self.formatter)
+        # self.addHandler(handler) 
