@@ -6,8 +6,8 @@ class EleLogger(logging.Logger):
     LOG_FORMATTER = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
   
     def __init__(self, config, version):
-        if not os.path.exists(os.path.dirname(config.log_file)):
-            os.makedirs(os.path.dirname(config.log_file))
+        if not os.path.exists(os.path.dirname(config.log_file_path)):
+            os.makedirs(os.path.dirname(config.log_file_path))
 
         logging.Logger.__init__(self, name="ele " + version + "")
         self.formatter = logging.Formatter(self.LOG_FORMATTER)
@@ -17,7 +17,7 @@ class EleLogger(logging.Logger):
         handler.setFormatter(self.formatter)
         self.addHandler(handler) 
 
-        handler = logging.FileHandler(config.log_file)
+        handler = logging.FileHandler(config.log_file_path)
         handler.setFormatter(self.formatter)
         self.addHandler(handler) 
 

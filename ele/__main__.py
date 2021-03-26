@@ -11,7 +11,7 @@ if __name__ == "__main__":
                                         epilog='Pavol Hudák')
     parser.add_argument('-v', '--version', action='version',
                                 version='%(prog)s ('+__version__+')')
-    parser.add_argument('-c', '--config', dest='config_file',
+    parser.add_argument('-c', '--config', dest='config_file_path',
                                 action='store',
                                 default="./ele/config.yml",
                                 help='Path to config file (default: %(default)s)')
@@ -22,4 +22,5 @@ if __name__ == "__main__":
 
     app = App(__version__, parser.parse_args())
     app.run()
+    app.finished()
     

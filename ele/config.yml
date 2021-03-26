@@ -1,6 +1,6 @@
 development:
   log_level: debug
-  log_file: ./ele.log 
+  log_file_path: ./ele.log 
   src:
     data_file: ./ele.log
   dst:
@@ -8,7 +8,7 @@ development:
 
 production:
   log_level: info
-  log_file: ./ele.log
+  log_file_path: ./ele.log
   src:
     data_file: ele.log
   dst:

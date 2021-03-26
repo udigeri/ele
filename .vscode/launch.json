@@ -22,7 +22,7 @@
             "program": "${file}",
             "args": [
                 "-c",
-                "configure.yml"
+                "./ele/configure.yml"
             ],
             "console": "integratedTerminal"
         },

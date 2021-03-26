@@ -1,5 +1,6 @@
 from config import Config
 from logger import EleLogger
+from converter import Converter
 from elevation import Elevation
 
 class App(object):
@@ -11,10 +12,10 @@ class App(object):
         self.config = Config(params = params)
         self.logger = EleLogger(self.config, version)
         self.logger.info(self.APP_INITIAL_MSG)
-        # self.logger.debug(self.APP_INITAL_MSG)
-        # self.logger.warn(self.APP_INITAL_MSG)
-        # self.logger.error(self.APP_INITAL_MSG)
-        # self.logger.critical(self.APP_INITAL_MSG)
 
     def run(self):
+        # cnv = Converter(self.config, self.logger)
         el = Elevation(self.config, self.logger)
+
+    def finished(self):
+        self.logger.info(self.APP_INITIAL_MSG + " finished")
